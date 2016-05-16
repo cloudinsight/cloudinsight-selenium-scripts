@@ -15,9 +15,16 @@ const loginPage = process.env.LOGINPAGE || 'https://user.oneapm.com/account/demo
 // 设置窗口大小
 driver.manage().window().setSize(1200, 768);
 
-// 定义函数
+/**
+ * 把 Base64 编码 decode 写入指定的文件
+ *
+ * @param filename {String} 文件名
+ * @param res {String} 截图的 Base64 编码
+ */
 const writeFile = (filename, res) => fs.writeFileSync(`./dist/${filename}.png`, new Buffer(res, 'base64'));
 
+// 循环
+// @todo 用 `async` 库重写
 const goThrough = (list, index) => {
 	if (list[index]) {
 		const fileName = (browserName + '_' + list[index]).replace(/\W+/g, '_');
@@ -30,9 +37,10 @@ const goThrough = (list, index) => {
 			}, 2000)
 		});
 	} else {
+		// 退出
 		driver.quit();
 	}
-}
+};
 
 // 清空重建文件夹
 rimraf.sync('./dist');
@@ -44,7 +52,10 @@ driver.get(loginPage).then(()=> {
 	// 访问首页
 	driver.get(homePage);
 
+	// 找到 sidebar
 	driver.wait(Until.elementLocated(By.css('.sidebar'))).then(sidebar => {
+
+		// 遍历 sidebar 下的 a 标签
 		sidebar
 			.findElements(By.css('a'))
 			.then(res => Promise.all(res.map(element =>element.getAttribute('href'))))
