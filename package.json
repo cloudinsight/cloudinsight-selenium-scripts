@@ -1,0 +1,25 @@
+{
+  "name": "cloudinsight-selenium-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "chrome": "SELENIUM_BROWSER=\"chrome\" SELENIUM_REMOTE_URL=\"http://dev.cloudinsight.cc:4444/wd/hub\" node index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wyvernnot/cloudinsight-selenium-scripts.git"
+  },
+  "author": "wyvernnot",
+  "license": "unlicense",
+  "bugs": {
+    "url": "https://github.com/wyvernnot/cloudinsight-selenium-scripts/issues"
+  },
+  "homepage": "https://github.com/wyvernnot/cloudinsight-selenium-scripts#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.2",
+    "selenium-webdriver": "^2.53.2"
+  }
+}
