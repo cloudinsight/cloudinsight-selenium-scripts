@@ -1,8 +1,16 @@
 # cloudinsight-selenium-scripts
 
-使用 Selenium API 快速验证 CloudInsight 左边导航栏里的所有的页面
+> 使用 Selenium API 快速验证 CloudInsight 左边导航栏里的所有的链接。
 
-## 配置选项
+## 目的
+
+- 验证以 OneAPM Demo 用户能否登录否成功
+- 检查 CloudInsight 网站是否可用
+- 检查是否有坏链
+- 及时发现严重的 CSS，字体，图片缺失等显示错误
+- 检查 CDN 的可用性
+
+## 配置可选项
 
 |      环境变量              |       备注       | 默认值                                  |
 |---------------------------|------------------|----------------------------------------|
@@ -13,7 +21,7 @@
 
 ## 配合 Jenkins 使用效果最佳
 
-![Jenkins](./configutation.png)
+![Jenkins](./configuration.png)
 
 Jenkins 需要安装这几个插件
 
