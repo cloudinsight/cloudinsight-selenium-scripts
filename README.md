@@ -19,9 +19,13 @@
 |   HOMEPAGE                |   首页            | https://cloud.oneapm.com/              |
 |   LOGINPAGE               |   登录页          | https://user.oneapm.com/account/demo.do|
 
-## 配合 Jenkins 使用效果最佳
+## 配合 Jenkins 的 Configuration Matrix 使用效果最佳
+
+![Create](./create.png)
 
 ![Jenkins](./configuration.png)
+
+![Result](./result.png)
 
 Jenkins 需要安装这几个插件
 
@@ -35,4 +39,4 @@ Jenkins 需要安装这几个插件
 
 ## 最终效果
 
-![界面截图](./screenshot.png)
+![Result](./result.png)

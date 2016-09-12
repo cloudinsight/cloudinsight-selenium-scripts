@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "chrome": "SELENIUM_BROWSER=\"chrome\" SELENIUM_REMOTE_URL=\"http://dev.cloudinsight.cc:4444/wd/hub\" node index.js",
+    "chrome": "SELENIUM_BROWSER=\"internet explorer\" SELENIUM_REMOTE_URL=\"http://dev.cloudinsight.cc:4444/wd/hub\" node index.js",
     "start": "node index.js"
   },
   "repository": {
