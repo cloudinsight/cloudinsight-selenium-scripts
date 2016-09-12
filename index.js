@@ -30,10 +30,13 @@ const goThrough = (list, index) => {
 		const fileName = (browserName + '_' + list[index]).replace(/\W+/g, '_');
 		driver.get(list[index]).then(()=> {
 			setTimeout(()=> {
-				driver.takeScreenshot()
-					.then(writeFile.bind(null, fileName)).then(()=> {
-					goThrough(list, index + 1);
-				})
+				driver
+					.takeScreenshot()
+					.then(writeFile.bind(null, fileName))
+					.then(() => {
+						console.log(list[index])
+						goThrough(list, index + 1);
+					});
 			}, 2000)
 		});
 	} else {
@@ -57,7 +60,7 @@ driver.get(loginPage).then(()=> {
 
 		// 遍历 sidebar 下的 a 标签
 		sidebar
-			.findElements(By.css('a'))
+			.findElements(By.css('a[href]'))
 			.then(res => Promise.all(res.map(element =>element.getAttribute('href'))))
 			.then(links => {
 				goThrough(links, 0);
